@@ -1,197 +1,187 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ruslan A. — Strategy & Investment Expert</title>
-<meta name="color-scheme" content="light dark" />
-<style>
-  :root{
-    --bg:#fff; --text:#111418; --muted:#6b7280;
-    --accent:#FFD43B; --line:#e5e7eb; --link:#0ea5e9; --chip:#ffffff;
-    --card:#fafafa;
-  }
-  html{scroll-behavior:smooth}
-  body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
-  .wrap{max-width:1000px;margin:0 auto;padding:18px 14px 64px}
-  @media(min-width:768px){ .wrap{padding:24px 20px 72px} }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruslan A. — Strategy & Investment Expert</title>
+  <meta name="description" content="Ruslan A. — Senior Project Development Manager. Strategy & Investment expert with 9+ years across oil, gas & petrochemicals. Leaders of Russia finalist." />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111418;
+      --muted:#6b7280;
+      --accent:#FFD43B;
+      --sidebar:#111111;
+      --link:#0ea5e9;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif; color:var(--text); background:var(--bg)}
+    .wrap{display:flex;flex-direction:column}
+    @media(min-width:860px){.wrap{flex-direction:row}}
+    aside{background:var(--sidebar); color:#e5e7eb; padding:28px 24px; width:320px; flex-shrink:0}
+    main{flex:1; padding:28px 20px 60px; max-width:1000px; margin:0 auto}
 
-  /* HEADER: единая сетка (фото слева, контент справа) */
-  .header{
-    display:grid; grid-template-columns:96px 1fr; gap:14px; align-items:center;
-    border-bottom:2px solid var(--line); padding-bottom:14px;
-  }
-  .avatar{width:96px;height:96px;border-radius:14px;object-fit:cover;border:2px solid #e2e8f0;cursor:pointer}
-  .name{margin:0;font-size:28px;font-weight:800;letter-spacing:.06em}
-  .name .hl{background:var(--accent);padding:2px 8px;border-radius:6px}
-  .role{margin:6px 0 6px;font-weight:700;color:#374151}
-  .note{margin:6px 0 0;color:var(--muted);font-size:13.5px;max-width:72ch}
+    header{text-align:left;margin-bottom:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    .avatar{width:72px;height:72px;border-radius:12px;object-fit:cover;border:3px solid var(--accent);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+    .header-text{flex:1}
+    .name{font-size:32px;font-weight:800;letter-spacing:.06em;margin:0}
+    .role{margin:6px 0;font-weight:600;color:#374151}
+    .note{font-size:14px;color:var(--muted);margin:8px 0 0}
 
-  /* NAV + CONTACTS: плотные ряды под ролью */
-  .rows{display:flex; flex-direction:column; gap:10px; margin-top:10px}
-  .chips{display:flex;flex-wrap:wrap;gap:10px}
-  .chip{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:var(--chip);color:#374151;text-decoration:none;font-weight:700;font-size:13px}
-  .chip:hover{border-color:#cbd5e1}
-  .contacts{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-  .c{display:flex;align-items:center;gap:8px;color:#1f2937;font-size:15px}
-  .c a{color:inherit;text-decoration:none}
-  .ci{width:18px;height:18px;opacity:.9}
+    nav.topnav{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0}
+    nav.topnav a{font-weight:700;text-decoration:none;color:#374151}
+    nav.topnav a:hover{color:#111827}
 
-  /* Секции */
-  section{margin:18px 0 22px;padding:18px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px}
-  section h2{margin:0 0 10px;font-size:18px;letter-spacing:.12em;color:#111827;border-bottom:2px solid var(--accent);padding-bottom:6px}
-  .bullets{margin:.4rem 0 0;padding-left:1.2rem}
-  .bullets li{margin:.25rem 0}
+    section{margin:28px 0;padding:20px;border-radius:10px;background:#fafafa;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+    section h2{font-size:18px;margin:0 0 12px;letter-spacing:.12em;color:#111827;border-bottom:2px solid var(--accent);padding-bottom:6px}
+    h3{margin:.6rem 0 .25rem;font-size:16px;color:#111}
+    .meta{color:var(--muted);font-weight:600;font-size:14px}
+    .bullets{margin:.4rem 0 0 0;padding-left:1.2rem}
+    .bullets li{margin:.25rem 0}
 
-  /* Experience */
-  .exp{margin:12px 0 0}
-  .org{margin:0;font-size:18px;font-weight:800;color:#0f172a}
-  .meta{margin:.25rem 0 .4rem;color:#475569;font-weight:700;font-size:14px}
+    .pill{display:inline-block;background:#0ea5e920;color:#0369a1;font-weight:600;font-size:13px;padding:3px 10px;border-radius:999px;margin:6px 0}
 
-  /* Lightbox */
-  .lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:1000}
-  .lb img{max-width:92vw;max-height:88vh;border-radius:12px;display:block}
-  .lb button{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:10px 12px;border-radius:10px;cursor:pointer}
+    .label{letter-spacing:.35em; font-weight:700; color:#9ca3af; font-size:12px; margin:18px 0 8px}
+    .block{margin:14px 0 22px}
+    .about{font-size:14px; color:#d1d5db}
+    .list{list-style:none; padding:0; margin:10px 0 0}
+    .list li{margin:.4rem 0; display:flex; gap:.5rem; align-items:flex-start}
+    .icon{width:18px;height:18px;flex:0 0 18px;opacity:.95}
+    .contact a{color:#e5e7eb;text-decoration:none}
+    .contact a:hover{opacity:.85}
 
-  @media(max-width:520px){
-    .name{font-size:24px}
-    .role{font-size:14px}
-    .header{grid-template-columns:84px 1fr}
-    .avatar{width:84px;height:84px}
-    section{padding:16px}
-  }
-</style>
+    /* lightbox */
+    .lb-back{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:100}
+    .lb-inner{position:relative;max-width:92vw;max-height:88vh}
+    .lb-img{max-width:92vw;max-height:88vh;display:block;border-radius:10px}
+    .lb-close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
+
+    @media(max-width:600px){
+      .name{font-size:24px}
+      .role{font-size:14px}
+      main{padding:20px 14px}
+      section{padding:16px}
+      section h2{font-size:16px}
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
-
-  <!-- HEADER -->
-  <header class="header">
-    <img id="avatar" class="avatar" src="photo.jpg" alt="Ruslan A.">
-    <div>
-      <h1 class="name"><span class="hl">RUSLAN A.</span></h1>
-      <div class="role">Senior Project Development Manager • Strategy & Investment Expert</div>
-      <p class="note">
-        Public version: showing shortened surname “Ruslan A.” for privacy and search-engine hygiene.
-        Phone & email are not public; current company name is masked. Full details available on request.
-      </p>
-
-      <div class="rows">
-        <nav class="chips" aria-label="Section navigation">
-          <a class="chip" href="#about">About</a>
-          <a class="chip" href="#languages">Languages</a>
-          <a class="chip" href="#experience">Experience</a>
-          <a class="chip" href="#strengths">Strengths</a>
-          <a class="chip" href="#education">Education</a>
-          <a class="chip" href="#additional">Additional</a>
-          <a class="chip" href="https://akbulatov.pro" target="_blank" rel="noopener">Full profile →</a>
-        </nav>
-
-        <div class="contacts">
-          <div class="c">
-            <svg class="ci" viewBox="0 0 24 24" fill="#60a5fa"><circle cx="12" cy="12" r="10"/></svg>
-            <a href="https://akbulatov.pro" target="_blank" rel="noopener">akbulatov.pro</a>
-          </div>
-          <div class="c">
-            <svg class="ci" viewBox="0 0 24 24" fill="#22d3ee"><path d="M22 3L2 12l6.5 2 2.5 7 3.5-4 5 4 2.5-21z"/></svg>
-            <a href="https://t.me/Akbulatov_R" target="_blank" rel="noopener">@Akbulatov_R</a>
-          </div>
-          <div class="c">
-            <svg class="ci" viewBox="0 0 24 24" fill="#34d399"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/></svg>
-            <span>Dubai (relocation planned from Moscow)</span>
-          </div>
+  <div class="wrap">
+    <main>
+      <header>
+        <img src="photo.jpg" alt="Ruslan A." class="avatar" onclick="openLb()"/>
+        <div class="header-text">
+          <h1 class="name">RUSLAN A.</h1>
+          <p class="role">Senior Project Development Manager • Strategy & Investment Expert</p>
+          <p class="note">Public version: showing shortened surname “Ruslan A.” for privacy and search-engine hygiene. Phone & email are not public; current company name is masked. Full details available on request.</p>
         </div>
+      </header>
+
+      <nav class="topnav" aria-label="Section navigation">
+        <a href="#about">About</a>
+        <a href="#languages">Languages</a>
+        <a href="#experience">Experience</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#education">Education</a>
+        <a href="#more">Additional</a>
+      </nav>
+
+      <section id="about">
+        <h2>ABOUT ME</h2>
+        <p>Strategic project manager with <strong>9+ years</strong> in oil, gas & petrochemicals. Known for rapid problem-solving under pressure and building trusted relationships with senior officials & C-suite executives.</p>
+      </section>
+
+      <section id="languages">
+        <h2>LANGUAGES</h2>
+        <ul class="bullets">
+          <li>English — B2 (Upper-Intermediate)</li>
+          <li>Russian — Native (Expert in high-level official & executive communications)</li>
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        <article>
+          <span class="pill">Leading Integrated Oil & Gas Holding</span>
+          <h3>Senior Project Development Manager | 2021 — Present</h3>
+          <ul class="bullets">
+            <li>Secured preferential tax regimes and low-interest financing.</li>
+            <li>Established a Special Economic Zone (SEZ) with major tax & investment benefits.</li>
+            <li>Drafted proposals for senior officials, including the President & Prime Minister of Russia.</li>
+            <li>Coordinated cross-functional teams in upstream, refining, and petrochemicals.</li>
+            <li>Built strong working relations with ministries, regional authorities & top executives.</li>
+          </ul>
+        </article>
+        <article>
+          <span class="pill">Ministry of Energy of the Russian Federation</span>
+          <h3>Senior Project Coordinator | 2016 — 2021</h3>
+          <ul class="bullets">
+            <li>Led strategic initiatives on regulation and investment in the oil & gas sector.</li>
+            <li>Prepared reports & presentations for the President, Prime Minister, and Minister of Energy.</li>
+            <li>Developed legislative proposals; coordinated federal approvals.</li>
+            <li>Built financial models and assessed investment impacts.</li>
+            <li>Maintained trusted communications with government agencies & energy companies.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="strengths">
+        <h2>PROFESSIONAL STRENGTHS</h2>
+        <ul class="bullets">
+          <li>Strategic & critical thinking under pressure.</li>
+          <li>High-level communication with ministries & C-suites.</li>
+          <li>Rapid problem-solving in uncertain environments.</li>
+          <li>Skilled in legal, financial & regulatory analysis.</li>
+          <li>Building networks across government and energy leaders.</li>
+        </ul>
+      </section>
+
+      <section id="education">
+        <h2>EDUCATION & CERTIFICATIONS</h2>
+        <ul class="bullets">
+          <li>MSc, Land & Resource Law — Kutafin Moscow State Law University (2018).</li>
+          <li>BSc, Chemical Technology — Gubkin University (2016).</li>
+          <li>Executive Training (2023–2024): Digital Currency & CBDC.</li>
+        </ul>
+      </section>
+
+      <section id="more">
+        <h2>ADDITIONAL INFORMATION</h2>
+        <p><em>Finalist of “Leaders of Russia” — Russia’s premier nationwide management competition, confirming top leadership potential and providing access to an exclusive government-business executive network.</em></p>
+      </section>
+
+      <section id="contacts">
+        <h2>CONTACTS</h2>
+        <ul class="bullets">
+          <li><a href="https://akbulatov.pro" target="_blank">akbulatov.pro</a></li>
+          <li><a href="https://t.me/Akbulatov_R" target="_blank">@Akbulatov_R</a></li>
+          <li>Dubai (relocation planned from Moscow)</li>
+        </ul>
+      </section>
+
+      <footer style="margin-top:24px; color:var(--muted); font-size:14px">
+        © <span id="y"></span> Ruslan A. • Public version of CV • For updates and full portfolio visit <a href="https://akbulatov.pro" target="_blank" rel="noopener" style="color:var(--link)">akbulatov.pro</a>
+      </footer>
+    </main>
+
+    <div class="lb-back" id="lb">
+      <div class="lb-inner">
+        <img class="lb-img" id="lbImg" alt="Ruslan A."/>
+        <button class="lb-close" onclick="closeLb()">✕</button>
       </div>
     </div>
-  </header>
+  </div>
 
-  <!-- ABOUT + LANGUAGES сразу после шапки -->
-  <section id="about">
-    <h2>ABOUT ME</h2>
-    <p>Strategic project manager with <strong>9+ years</strong> in oil, gas & petrochemicals. Known for rapid problem-solving under pressure and building trusted relationships with senior officials & C-suite executives.</p>
-  </section>
-
-  <section id="languages">
-    <h2>LANGUAGES</h2>
-    <ul class="bullets">
-      <li>English — B2 (Upper-Intermediate)</li>
-      <li>Russian — Native (expert in high-level official & executive communications)</li>
-    </ul>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <h2>PROFESSIONAL EXPERIENCE</h2>
-
-    <div class="exp">
-      <h3 class="org">Leading Integrated Oil &amp; Gas Holding</h3>
-      <div class="meta">Senior Project Development Manager | 2021 — Present</div>
-      <ul class="bullets">
-        <li>Secured preferential tax regimes and low-interest financing.</li>
-        <li>Established a Special Economic Zone (SEZ) with major tax &amp; investment benefits.</li>
-        <li>Drafted proposals for senior officials, including the President &amp; Prime Minister of Russia.</li>
-        <li>Coordinated cross-functional teams in upstream, refining, and petrochemicals.</li>
-        <li>Built strong working relations with ministries, regional authorities &amp; top executives.</li>
-      </ul>
-    </div>
-
-    <div class="exp">
-      <h3 class="org">Ministry of Energy of the Russian Federation</h3>
-      <div class="meta">Senior Project Coordinator | 2016 — 2021</div>
-      <ul class="bullets">
-        <li>Led strategic initiatives on regulation and investment in the oil &amp; gas sector.</li>
-        <li>Prepared reports &amp; presentations for the President, Prime Minister, and Minister of Energy.</li>
-        <li>Developed legislative proposals; coordinated federal approvals.</li>
-        <li>Built financial models and assessed investment impacts.</li>
-        <li>Maintained trusted communications with government agencies &amp; energy companies.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="strengths">
-    <h2>PROFESSIONAL STRENGTHS</h2>
-    <ul class="bullets">
-      <li>Strategic &amp; critical thinking under pressure.</li>
-      <li>High-level communication with ministries &amp; C-suites.</li>
-      <li>Rapid problem-solving in uncertain environments.</li>
-      <li>Skilled in legal, financial &amp; regulatory analysis.</li>
-      <li>Building networks across government and energy leaders.</li>
-    </ul>
-  </section>
-
-  <section id="education">
-    <h2>EDUCATION &amp; CERTIFICATIONS</h2>
-    <ul class="bullets">
-      <li>MSc, Land &amp; Resource Law — Kutafin Moscow State Law University (2018).</li>
-      <li>BSc, Chemical Technology — Gubkin University (2016).</li>
-      <li>Executive Training (2023–2024): Digital Currency &amp; CBDC.</li>
-    </ul>
-  </section>
-
-  <section id="additional">
-    <h2>ADDITIONAL INFORMATION</h2>
-    <p><em>Finalist of “Leaders of Russia” — Russia’s premier nationwide management competition, confirming top leadership potential and providing access to an exclusive government-business executive network.</em></p>
-  </section>
-
-  <footer style="margin-top:24px;color:#6b7280;font-size:14px">
-    © <span id="y"></span> Ruslan A. • Public version of CV • Updates:
-    <a class="chip" href="https://akbulatov.pro" target="_blank" rel="noopener" style="text-decoration:none">akbulatov.pro</a>
-  </footer>
-</div>
-
-<!-- LIGHTBOX -->
-<div class="lb" id="lb">
-  <img src="photo.jpg" alt="Ruslan A.">
-  <button id="lbClose">✕</button>
-</div>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  const lb = document.getElementById('lb');
-  document.getElementById('avatar').addEventListener('click', ()=> lb.style.display='flex');
-  document.getElementById('lbClose').addEventListener('click', ()=> lb.style.display='none');
-  lb.addEventListener('click', e=>{ if(e.target===lb) lb.style.display='none'; });
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && lb.style.display==='flex') lb.style.display='none'; });
-</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function openLb(){
+      document.getElementById('lb').style.display='flex';
+      document.getElementById('lbImg').src='photo.jpg';
+    }
+    function closeLb(){
+      document.getElementById('lb').style.display='none';
+    }
+  </script>
 </body>
 </html>
