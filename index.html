@@ -4,59 +4,187 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruslan A. — Strategy & Investment Expert</title>
-  <meta name="description" content="Ruslan A. — Senior Project Development Manager. Strategy & Investment expert with 8+ years across oil, gas & petrochemicals. Leaders of Russia finalist. Public version for privacy." />
+  <meta name="description" content="Ruslan A. — Senior Project Development Manager. Strategy & Investment expert with 9+ years across oil, gas & petrochemicals. Leaders of Russia finalist. Public web version for privacy." />
   <meta name="robots" content="noindex, noarchive" />
   <meta name="color-scheme" content="light dark" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='%23FFD43B' font-family='Arial, Helvetica, sans-serif'>R</text></svg>">
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#111418;
-      --muted:#6b7280;
-      --accent:#FFD43B;
-      --sidebar:#111111;
-      --link:#0ea5e9;
-    }
+    :root{ --bg:#ffffff; --text:#111418; --muted:#6b7280; --accent:#FFD43B; --sidebar:#111111; --card:#f8fafc; --line:#e5e7eb; --link:#0ea5e9; }
+    *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg)}
+    body{margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg)}
+
+    /* ===== LAYOUT (mobile-first) ===== */
     .wrap{display:grid; grid-template-columns:1fr; min-height:100dvh}
-    @media (min-width:860px){.wrap{grid-template-columns:320px 1fr}}
-    aside{background:var(--sidebar); color:#e5e7eb; padding:28px 24px; position:relative; top:0; align-self:start; height:auto; overflow:auto}
-    @media (min-width:860px){aside{position:sticky; height:100dvh}}
-    main{padding:32px 20px 56px; max-width:1000px; margin:0 auto}
+    main{order:1; padding:22px 16px 60px; max-width:1000px; margin:0 auto}
+    aside{order:2; background:var(--sidebar); color:#e5e7eb; padding:22px 16px; border-top:6px solid var(--accent)}
+    @media (min-width:980px){
+      .wrap{grid-template-columns:320px 1fr}
+      aside{order:1; position:sticky; top:0; height:100dvh; overflow:auto; border-top:none}
+      main{order:2; padding:30px 28px 64px}
+    }
+
+    /* ===== HEADER ===== */
+    .header{display:flex; align-items:center; gap:12px; flex-wrap:wrap; border-bottom:2px solid var(--line); padding-bottom:14px}
+    .avatar{width:44px; height:44px; border-radius:10px; object-fit:cover; border:2px solid #e2e8f0}
+    .name{font-size:28px; font-weight:800; letter-spacing:.04em; margin:0}
+    .underline{background:var(--accent); padding:2px 8px; border-radius:6px}
+    .role{margin:2px 0 0; font-weight:600; color:#374151; font-size:14px}
+    .notice{margin:8px 0 0; color:#6b7280; font-size:13px}
+
+    /* ===== TOP NAV ===== */
+    .topnav{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0}
+    .chip{display:inline-block; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:#fff; color:#374151; text-decoration:none; font-weight:700; font-size:13px}
+    .chip:hover{border-color:#cbd5e1}
+
+    /* ===== SECTIONS ===== */
+    section{padding:20px 0; border-bottom:2px solid var(--line)}
+    section:last-of-type{border-bottom:none}
+    h2{font-size:18px; letter-spacing:.12em; margin:0 0 12px; color:#111827}
+    h2 .tag{background:var(--accent); border-radius:6px; padding:4px 8px}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 14px; margin:10px 0}
+    .org{display:inline-block; font-weight:800; color:#0f172a; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px; margin-bottom:6px}
+    .meta{display:inline-block; color:#475569; font-weight:700; padding:4px 8px; border-radius:999px; background:#eef2f7; margin-left:6px}
+    .bullets{margin:8px 0 0; padding-left:1.1rem}
+    .bullets li{margin:.28rem 0}
+    .link{color:var(--link); text-decoration:none}
+
+    /* ===== SIDEBAR (CV) ===== */
     .photo{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:14px; border:3px solid #1f2937; box-shadow:0 6px 28px rgba(0,0,0,.35)}
-    .label{letter-spacing:.35em; font-weight:700; color:#9ca3af; font-size:12px; margin:18px 0 8px}
-    .block{margin:14px 0 22px}
+    .label{letter-spacing:.35em; font-weight:700; color:#9ca3af; font-size:12px; margin:16px 0 8px}
+    .block{margin:12px 0 18px}
     .about{font-size:14px; color:#d1d5db}
-    .list{list-style:none; padding:0; margin:10px 0 0}
+    .list{list-style:none; padding:0; margin:8px 0 0}
     .list li{margin:.4rem 0; display:flex; gap:.5rem; align-items:flex-start}
     .icon{width:18px; height:18px; flex:0 0 18px; opacity:.95}
     .contact a{color:#e5e7eb; text-decoration:none}
     .contact a:hover{opacity:.85}
-    .name{font-size:34px; font-weight:800; letter-spacing:.06em; margin:0}
-    .role{margin:6px 0 0; font-weight:600; color:#374151}
-    .underline{display:inline-block; background:var(--accent); padding:4px 10px; border-radius:6px}
-    section{padding:24px 0; border-top:1px solid #e5e7eb}
-    section:first-of-type{border-top:none}
-    h2{font-size:18px; margin:0 0 12px; letter-spacing:.12em; color:#111827}
-    h2 a{color:inherit; text-decoration:none}
-    h3{margin:.75rem 0 .25rem; font-size:16px}
-    .meta{color:var(--muted); font-weight:600}
-    .bullets{margin:.4rem 0 0 0; padding-left:1.1rem}
-    .bullets li{margin:.25rem 0}
-    .link{color:var(--link); text-decoration:none}
-    .pill{display:inline-flex; align-items:center; gap:.4rem; padding:.2rem .55rem; border-radius:999px; background:#0ea5e926; color:#0369a1; font-weight:600; font-size:12px}
-    .topnav{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0}
-    .topnav a{font-weight:700; text-decoration:none; color:#374151}
-    .topnav a:hover{color:#111827}
-    @media (max-width:600px){.name{font-size:26px}.role{font-size:14px}main{padding:20px 14px}}
-    @media print{aside{position:static; height:auto}.link{color:#111}}
+
+    /* collapsible photo */
+    details.photo-toggle{background:#0f172a; border:1px solid #1f2937; border-radius:12px; padding:10px 12px}
+    details.photo-toggle summary{cursor:pointer; list-style:none; outline:none; display:flex; align-items:center; justify-content:space-between; gap:10px}
+    details.photo-toggle summary::-webkit-details-marker{display:none}
+    .caret{font-weight:800; opacity:.9}
+    details[open] .caret{transform:rotate(180deg)}
+    .ph-wrap{margin-top:10px}
+
+    /* small tweaks */
+    @media (max-width:600px){ .name{font-size:24px} .role{font-size:13px} }
+    @media print{ aside{position:static; height:auto} .link{color:#111} .chip{border-color:#111} }
   </style>
 </head>
 <body>
   <div class="wrap">
+
+    <!-- ===== MAIN (white) ===== -->
+    <main id="top">
+      <!-- Header -->
+      <div class="header">
+        <img class="avatar" src="photo.jpg" alt="Ruslan A. avatar">
+        <div>
+          <h1 class="name"><span class="underline">RUSLAN A.</span></h1>
+          <div class="role">Senior Project Development Manager • Strategy & Investment Expert</div>
+          <div class="notice">Public version: showing shortened surname “Ruslan A.” for privacy and search-engine hygiene. Full details available on request.</div>
+        </div>
+      </div>
+
+      <!-- Top navigation -->
+      <nav class="topnav" aria-label="Section navigation">
+        <a class="chip" href="#experience">Experience</a>
+        <a class="chip" href="#strengths">Strengths</a>
+        <a class="chip" href="#education">Education</a>
+        <a class="chip" href="#more">Additional</a>
+        <a class="chip" href="https://akbulatov.pro" target="_blank" rel="noopener">Full profile →</a>
+      </nav>
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <h2><span class="tag">PROFESSIONAL EXPERIENCE</span></h2>
+
+        <div class="card">
+          <div>
+            <span class="org">Leading Integrated Oil &amp; Gas Holding</span>
+            <span class="meta">Senior Project Development Manager | 2021 — Present</span>
+          </div>
+          <ul class="bullets">
+            <li>Secured preferential tax regimes and low-interest financing.</li>
+            <li>Established a Special Economic Zone (SEZ) with major tax &amp; investment benefits.</li>
+            <li>Drafted proposals for senior officials, including the President &amp; Prime Minister of Russia.</li>
+            <li>Coordinated cross-functional teams in upstream, refining, and petrochemicals.</li>
+            <li>Built strong working relations with ministries, regional authorities &amp; top executives.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div>
+            <span class="org">Ministry of Energy of the Russian Federation</span>
+            <span class="meta">Senior Project Coordinator | 2016 — 2021</span>
+          </div>
+          <ul class="bullets">
+            <li>Led strategic initiatives on regulation and investment in the oil &amp; gas sector.</li>
+            <li>Prepared reports &amp; presentations for the President, Prime Minister, and Minister of Energy.</li>
+            <li>Developed legislative proposals; coordinated federal approvals.</li>
+            <li>Built financial models and assessed investment impacts.</li>
+            <li>Maintained trusted communications with government agencies &amp; energy companies.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- STRENGTHS -->
+      <section id="strengths">
+        <h2><span class="tag">PROFESSIONAL STRENGTHS</span></h2>
+        <div class="card">
+          <ul class="bullets">
+            <li>Strategic &amp; critical thinking under pressure.</li>
+            <li>High-level communication with ministries &amp; C-suites.</li>
+            <li>Rapid problem-solving in uncertain environments.</li>
+            <li>Skilled in legal, financial &amp; regulatory analysis.</li>
+            <li>Building networks across government and energy leaders.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <h2><span class="tag">EDUCATION &amp; CERTIFICATIONS</span></h2>
+        <div class="card">
+          <ul class="bullets">
+            <li>MSc, Land &amp; Resource Law — Kutafin Moscow State Law University (2018).</li>
+            <li>BSc, Chemical Technology — Gubkin University (2016).</li>
+            <li>Executive Training (2023–2024): Digital Currency &amp; CBDC.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ADDITIONAL -->
+      <section id="more">
+        <h2><span class="tag">ADDITIONAL INFORMATION</span></h2>
+        <div class="card">
+          <p><em>Finalist of “Leaders of Russia” — Russia’s premier nationwide management competition, confirming top leadership potential and providing access to an exclusive government-business executive network.</em></p>
+        </div>
+      </section>
+
+      <footer style="margin-top:20px; color:var(--muted); font-size:14px">
+        © <span id="y"></span> Ruslan A. • This page mirrors the one-page CV. For updates and full portfolio visit
+        <a class="link" href="https://akbulatov.pro" target="_blank" rel="noopener">akbulatov.pro</a>.
+      </footer>
+    </main>
+
+    <!-- ===== SIDEBAR (black CV column) ===== -->
     <aside>
-      <img class="photo" src="photo.jpg" alt="Ruslan A. portrait" />
+      <!-- Collapsible photo -->
+      <div class="block">
+        <details class="photo-toggle">
+          <summary>
+            <span>Show photo</span>
+            <span class="caret">▾</span>
+          </summary>
+          <div class="ph-wrap">
+            <img class="photo" src="photo.jpg" alt="Ruslan A. portrait" />
+          </div>
+        </details>
+      </div>
+
       <div class="block">
         <div class="label">CONTACTS</div>
         <ul class="list contact">
@@ -74,13 +202,15 @@
           </li>
         </ul>
       </div>
+
       <div class="block">
         <div class="label">ABOUT ME</div>
         <div class="about">
-          Strategic project manager with 8+ years in oil, gas & petrochemicals. Known for rapid problem-solving under pressure and building trusted relationships with senior officials & C-suite executives. <em>Finalist of “Leaders of Russia” — Russia’s top nationwide management competition, confirming executive potential and granting access to an elite public-private leadership network.</em><br><br>
-          Note: Full surname hidden online (displayed as Ruslan A.) for confidentiality and search-engine privacy. Full details provided in CV on request.
+          Strategic project manager with <strong>9+ years</strong> in oil, gas & petrochemicals. Known for rapid problem-solving under pressure and building trusted relationships with senior officials & C-suite executives.
+          <em>Finalist of “Leaders of Russia” — Russia’s top nationwide management competition, confirming executive potential and granting access to an elite public-private leadership network.</em>
         </div>
       </div>
+
       <div class="block">
         <div class="label">LANGUAGES</div>
         <ul class="list">
@@ -88,79 +218,26 @@
           <li>• Russian — Native (Expert in high-level official & executive communications; drafting materials for President, Prime Minister, and Ministers)</li>
         </ul>
       </div>
+
       <div class="block">
-        <a class="pill" href="#top">↑ Back to top</a>
+        <a class="chip" href="#top">↑ Back to top</a>
       </div>
     </aside>
-    <main id="top">
-      <header>
-        <h1 class="name"><span class="underline">RUSLAN A.</span></h1>
-        <p class="role">Senior Project Development Manager • Strategy & Investment Expert</p>
-        <p style="margin:6px 0 0; color:#6b7280; font-size:14px">
-          Public version: showing shortened surname “Ruslan A.” for privacy and search-engine hygiene. Full details available on request.
-        </p>
-        <nav class="topnav" aria-label="Section navigation">
-          <a href="#experience">Experience</a>
-          <a href="#strengths">Strengths</a>
-          <a href="#education">Education</a>
-          <a href="#more">Additional</a>
-          <a class="link" href="https://akbulatov.pro" target="_blank" rel="noopener">Full profile & updates →</a>
-        </nav>
-      </header>
-      <section id="experience">
-        <h2><a href="#experience">PROFESSIONAL EXPERIENCE</a></h2>
-        <article>
-          <h3>Leading Integrated Oil &amp; Gas Holding</h3>
-          <div class="meta">Senior Project Development Manager | 2021 — Present</div>
-          <ul class="bullets">
-            <li>Secured preferential tax regimes and low-interest financing.</li>
-            <li>Established a Special Economic Zone (SEZ) with major tax & investment benefits.</li>
-            <li>Drafted proposals for senior officials, including the President & Prime Minister of Russia.</li>
-            <li>Coordinated cross-functional teams in upstream, refining, and petrochemicals.</li>
-            <li>Built strong working relations with ministries, regional authorities & top executives.</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Ministry of Energy of the Russian Federation</h3>
-          <div class="meta">Senior Project Coordinator | 2016 — 2021</div>
-          <ul class="bullets">
-            <li>Led strategic initiatives on regulation and investment in the oil & gas sector.</li>
-            <li>Prepared reports & presentations for the President, Prime Minister, and Minister of Energy.</li>
-            <li>Developed legislative proposals; coordinated federal approvals.</li>
-            <li>Built financial models and assessed investment impacts.</li>
-            <li>Maintained trusted communications with government agencies & energy companies.</li>
-          </ul>
-        </article>
-      </section>
-      <section id="strengths">
-        <h2><a href="#strengths">PROFESSIONAL STRENGTHS</a></h2>
-        <ul class="bullets">
-          <li>Strategic & critical thinking under pressure.</li>
-          <li>High-level communication with ministries & C-suites.</li>
-          <li>Rapid problem-solving in uncertain environments.</li>
-          <li>Skilled in legal, financial & regulatory analysis.</li>
-          <li>Building networks across government and energy leaders.</li>
-        </ul>
-      </section>
-      <section id="education">
-        <h2><a href="#education">EDUCATION & CERTIFICATIONS</a></h2>
-        <ul class="bullets">
-          <li>MSc, Land & Resource Law — Kutafin Moscow State Law University (2018).</li>
-          <li>BSc, Chemical Technology — Gubkin University (2016).</li>
-          <li>Executive Training (2023–2024): Digital Currency & CBDC.</li>
-        </ul>
-      </section>
-      <section id="more">
-        <h2><a href="#more">ADDITIONAL INFORMATION</a></h2>
-        <p><em>Finalist of “Leaders of Russia” — Russia’s premier nationwide management competition, confirming top leadership potential and providing access to an exclusive government-business executive network.</em></p>
-      </section>
-      <footer style="margin-top:24px; color:var(--muted); font-size:14px">
-        © <span id="y"></span> Ruslan A. • This page mirrors the one-page CV. Full surname hidden online for confidentiality. For updates and full portfolio visit <a class="link" href="https://akbulatov.pro" target="_blank" rel="noopener">akbulatov.pro</a>.
-      </footer>
-    </main>
   </div>
+
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear()
+    // current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // after opening photo on mobile, scroll to it
+    const det = document.querySelector('details.photo-toggle');
+    if(det){
+      det.addEventListener('toggle', ()=>{
+        if(det.open && window.innerWidth < 980){
+          det.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    }
   </script>
 </body>
 </html>
