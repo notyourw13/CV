@@ -16,7 +16,7 @@
     .wrap{max-width:1000px;margin:0 auto;padding:18px 14px 64px}
     @media(min-width:768px){ .wrap{padding:24px 20px 72px} }
 
-    /* header: photo + text */
+    /* header */
     .intro{display:flex;align-items:flex-start;gap:18px;margin-bottom:20px;flex-wrap:wrap}
     .avatar{width:110px;height:110px;border-radius:12px;object-fit:cover;border:3px solid var(--accent);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.25)}
     .header-text{flex:1;min-width:260px}
@@ -24,16 +24,16 @@
     .role{margin:6px 0;font-weight:700;color:#374151}
     .note{font-size:14px;color:var(--muted);margin:8px 0 0}
 
+    /* CONTACTS — compact single row */
+    .contacts{display:flex;gap:18px;align-items:center;margin:10px 0 0;flex-wrap:wrap}
+    .citem{display:inline-flex;align-items:center;gap:8px;color:#1f2937}
+    .citem a{color:inherit;text-decoration:none}
+    .cicon{width:18px;height:18px;opacity:.9;vertical-align:-2px}
+
     /* top nav */
     nav.topnav{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0;justify-content:center}
     nav.topnav a{font-weight:700;text-decoration:none;color:#374151}
     nav.topnav a:hover{color:#111827}
-
-    /* contacts row */
-    .contact .list{list-style:none;padding:0;margin:10px 0 0}
-    .contact .list li{margin:.4rem 0;display:flex;gap:.5rem;align-items:flex-start}
-    .contact a{color:var(--text);text-decoration:none}
-    .contact a:hover{opacity:.85}
 
     /* sections */
     section{margin:28px 0;padding:20px;border-radius:10px;background:#fafafa;box-shadow:0 1px 3px rgba(0,0,0,.08)}
@@ -45,7 +45,7 @@
     .pill{display:inline-block;background:#0ea5e920;color:#0369a1;font-weight:600;font-size:13px;padding:3px 10px;border-radius:999px;margin:6px 0}
 
     /* lightbox */
-    .lb-back{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:100}
+    .lb-back{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:1000}
     .lb-inner{position:relative;max-width:92vw;max-height:88vh}
     .lb-img{max-width:92vw;max-height:88vh;display:block;border-radius:10px}
     .lb-close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
@@ -55,8 +55,8 @@
       .role{font-size:14px}
       .intro{flex-direction:column;align-items:center;text-align:center}
       .header-text{text-align:center}
+      .contacts{justify-content:center}
       nav.topnav{justify-content:center}
-      .contact .list{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
     }
   </style>
 </head>
@@ -70,16 +70,23 @@
         <h1 class="name">RUSLAN A.</h1>
         <p class="role">Senior Project Development Manager • Strategy & Investment Expert</p>
 
-        <!-- SHORT PRIVACY NOTE -->
-        <p class="note">Public version: surname, phone, email and current employer are hidden for search-engine hygiene.</p>
+        <!-- ultra short privacy note -->
+        <p class="note">Public version: surname, phone, email & current employer are hidden for search-engine hygiene.</p>
 
-        <!-- CONTACTS -->
-        <div class="contact">
-          <ul class="list">
-            <li>🔵 <a href="https://akbulatov.pro" target="_blank">akbulatov.pro</a></li>
-            <li>✈️ <a href="https://t.me/Akbulatov_R" target="_blank">@Akbulatov_R</a></li>
-            <li>📍 Dubai (relocation planned from Moscow)</li>
-          </ul>
+        <!-- compact contacts -->
+        <div class="contacts" aria-label="Contacts">
+          <span class="citem">
+            <svg class="cicon" viewBox="0 0 24 24" fill="#60a5fa" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/></svg>
+            <a href="https://akbulatov.pro" target="_blank" rel="noopener">akbulatov.pro</a>
+          </span>
+          <span class="citem">
+            <svg class="cicon" viewBox="0 0 24 24" fill="#22d3ee" xmlns="http://www.w3.org/2000/svg"><path d="M22 3L2 12l6.5 2 2.5 7 3.5-4 5 4 2.5-21z"/></svg>
+            <a href="https://t.me/Akbulatov_R" target="_blank" rel="noopener">@Akbulatov_R</a>
+          </span>
+          <span class="citem">
+            <svg class="cicon" viewBox="0 0 24 24" fill="#34d399" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/></svg>
+            Dubai (relocation planned from Moscow)
+          </span>
         </div>
       </div>
     </div>
@@ -160,7 +167,7 @@
       </ul>
     </section>
 
-    <!-- MORE -->
+    <!-- ADDITIONAL -->
     <section id="more">
       <h2>ADDITIONAL INFORMATION</h2>
       <p><em>Finalist of “Leaders of Russia” — Russia’s premier nationwide management competition, confirming top leadership potential and providing access to an exclusive government-business executive network.</em></p>
@@ -175,15 +182,30 @@
   <!-- LIGHTBOX -->
   <div class="lb-back" id="lb">
     <div class="lb-inner">
-      <img class="lb-img" id="lbImg" alt="Ruslan A."/>
-      <button class="lb-close" onclick="closeLb()">✕</button>
+      <img class="lb-img" id="lbImg" alt="Ruslan A." />
+      <button class="lb-close" id="lbClose">✕</button>
     </div>
   </div>
 
   <script>
+    // year
     document.getElementById('y').textContent = new Date().getFullYear();
-    function openLb(){ document.getElementById('lb').style.display='flex'; document.getElementById('lbImg').src='photo.jpg'; }
-    function closeLb(){ document.getElementById('lb').style.display='none'; }
+
+    // open/close lightbox
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
+
+    function openLb(){ lbImg.src='photo.jpg'; lb.style.display='flex'; }
+    function closeLb(){ lb.style.display='none'; }
+
+    // click avatar to open
+    document.querySelector('.avatar').addEventListener('click', openLb);
+
+    // close on X, on backdrop click, and on Esc
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && lb.style.display==='flex') closeLb(); });
   </script>
 </body>
 </html>
