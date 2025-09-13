@@ -8,54 +8,58 @@
 <style>
   :root{
     --bg:#fff; --text:#111418; --muted:#6b7280;
-    --accent:#FFD43B; --line:#e5e7eb; --link:#0ea5e9; --card:#fafafa;
+    --accent:#FFD43B; --line:#e5e7eb; --link:#0ea5e9; --chip:#ffffff;
+    --card:#fafafa;
   }
   html{scroll-behavior:smooth}
   body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
+  .wrap{max-width:1000px;margin:0 auto;padding:18px 14px 64px}
+  @media(min-width:768px){ .wrap{padding:24px 20px 72px} }
 
-  /* layout */
-  .wrap{max-width:1000px;margin:0 auto;padding:22px 16px 64px}
-  @media(min-width:768px){ .wrap{padding:28px 20px 72px} }
-
-  /* header */
+  /* HEADER: единая сетка (фото слева, контент справа) */
   .header{
-    display:grid; grid-template-columns:96px 1fr; align-items:center; gap:14px;
+    display:grid; grid-template-columns:96px 1fr; gap:14px; align-items:center;
     border-bottom:2px solid var(--line); padding-bottom:14px;
   }
   .avatar{width:96px;height:96px;border-radius:14px;object-fit:cover;border:2px solid #e2e8f0;cursor:pointer}
   .name{margin:0;font-size:28px;font-weight:800;letter-spacing:.06em}
   .name .hl{background:var(--accent);padding:2px 8px;border-radius:6px}
-  .role{margin:6px 0 0;font-weight:700;color:#374151}
-  .note{margin:10px 0 0;color:var(--muted);font-size:13.5px;max-width:70ch}
+  .role{margin:6px 0 6px;font-weight:700;color:#374151}
+  .note{margin:6px 0 0;color:var(--muted);font-size:13.5px;max-width:72ch}
 
-  /* nav chips */
-  .topnav{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 0}
-  .chip{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#374151;text-decoration:none;font-weight:700;font-size:13px}
+  /* NAV + CONTACTS: плотные ряды под ролью */
+  .rows{display:flex; flex-direction:column; gap:10px; margin-top:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:var(--chip);color:#374151;text-decoration:none;font-weight:700;font-size:13px}
   .chip:hover{border-color:#cbd5e1}
+  .contacts{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .c{display:flex;align-items:center;gap:8px;color:#1f2937;font-size:15px}
+  .c a{color:inherit;text-decoration:none}
+  .ci{width:18px;height:18px;opacity:.9}
 
-  /* contacts bar */
-  .contacts{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:16px 0 6px}
-  .citem{display:flex;align-items:center;gap:8px;color:#1f2937}
-  .citem a{color:inherit;text-decoration:none}
-  .cicon{width:18px;height:18px;opacity:.9}
-
-  /* sections */
+  /* Секции */
   section{margin:18px 0 22px;padding:18px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px}
   section h2{margin:0 0 10px;font-size:18px;letter-spacing:.12em;color:#111827;border-bottom:2px solid var(--accent);padding-bottom:6px}
   .bullets{margin:.4rem 0 0;padding-left:1.2rem}
   .bullets li{margin:.25rem 0}
 
-  /* experience */
+  /* Experience */
   .exp{margin:12px 0 0}
   .org{margin:0;font-size:18px;font-weight:800;color:#0f172a}
   .meta{margin:.25rem 0 .4rem;color:#475569;font-weight:700;font-size:14px}
 
-  /* lightbox */
+  /* Lightbox */
   .lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:1000}
   .lb img{max-width:92vw;max-height:88vh;border-radius:12px;display:block}
   .lb button{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:10px 12px;border-radius:10px;cursor:pointer}
 
-  @media(max-width:520px){ .name{font-size:24px} .role{font-size:14px} section{padding:16px} }
+  @media(max-width:520px){
+    .name{font-size:24px}
+    .role{font-size:14px}
+    .header{grid-template-columns:84px 1fr}
+    .avatar{width:84px;height:84px}
+    section{padding:16px}
+  }
 </style>
 </head>
 <body>
@@ -72,36 +76,36 @@
         Phone & email are not public; current company name is masked. Full details available on request.
       </p>
 
-      <!-- NAV -->
-      <nav class="topnav" aria-label="Section navigation">
-        <a class="chip" href="#about">About</a>
-        <a class="chip" href="#languages">Languages</a>
-        <a class="chip" href="#experience">Experience</a>
-        <a class="chip" href="#strengths">Strengths</a>
-        <a class="chip" href="#education">Education</a>
-        <a class="chip" href="#additional">Additional</a>
-        <a class="chip" href="https://akbulatov.pro" target="_blank" rel="noopener">Full profile →</a>
-      </nav>
+      <div class="rows">
+        <nav class="chips" aria-label="Section navigation">
+          <a class="chip" href="#about">About</a>
+          <a class="chip" href="#languages">Languages</a>
+          <a class="chip" href="#experience">Experience</a>
+          <a class="chip" href="#strengths">Strengths</a>
+          <a class="chip" href="#education">Education</a>
+          <a class="chip" href="#additional">Additional</a>
+          <a class="chip" href="https://akbulatov.pro" target="_blank" rel="noopener">Full profile →</a>
+        </nav>
 
-      <!-- CONTACTS (moved to top) -->
-      <div class="contacts">
-        <div class="citem">
-          <svg class="cicon" viewBox="0 0 24 24" fill="#60a5fa"><circle cx="12" cy="12" r="10"/></svg>
-          <a href="https://akbulatov.pro" target="_blank" rel="noopener">akbulatov.pro</a>
-        </div>
-        <div class="citem">
-          <svg class="cicon" viewBox="0 0 24 24" fill="#22d3ee"><path d="M22 3L2 12l6.5 2 2.5 7 3.5-4 5 4 2.5-21z"/></svg>
-          <a href="https://t.me/Akbulatov_R" target="_blank" rel="noopener">@Akbulatov_R</a>
-        </div>
-        <div class="citem">
-          <svg class="cicon" viewBox="0 0 24 24" fill="#34d399"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/></svg>
-          <span>Dubai (relocation planned from Moscow)</span>
+        <div class="contacts">
+          <div class="c">
+            <svg class="ci" viewBox="0 0 24 24" fill="#60a5fa"><circle cx="12" cy="12" r="10"/></svg>
+            <a href="https://akbulatov.pro" target="_blank" rel="noopener">akbulatov.pro</a>
+          </div>
+          <div class="c">
+            <svg class="ci" viewBox="0 0 24 24" fill="#22d3ee"><path d="M22 3L2 12l6.5 2 2.5 7 3.5-4 5 4 2.5-21z"/></svg>
+            <a href="https://t.me/Akbulatov_R" target="_blank" rel="noopener">@Akbulatov_R</a>
+          </div>
+          <div class="c">
+            <svg class="ci" viewBox="0 0 24 24" fill="#34d399"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/></svg>
+            <span>Dubai (relocation planned from Moscow)</span>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ABOUT + LANGUAGES near the top -->
+  <!-- ABOUT + LANGUAGES сразу после шапки -->
   <section id="about">
     <h2>ABOUT ME</h2>
     <p>Strategic project manager with <strong>9+ years</strong> in oil, gas & petrochemicals. Known for rapid problem-solving under pressure and building trusted relationships with senior officials & C-suite executives.</p>
@@ -111,7 +115,7 @@
     <h2>LANGUAGES</h2>
     <ul class="bullets">
       <li>English — B2 (Upper-Intermediate)</li>
-      <li>Russian — Native (Expert in high-level official & executive communications)</li>
+      <li>Russian — Native (expert in high-level official & executive communications)</li>
     </ul>
   </section>
 
@@ -170,7 +174,7 @@
   </section>
 
   <footer style="margin-top:24px;color:#6b7280;font-size:14px">
-    © <span id="y"></span> Ruslan A. • Public version of CV • For updates visit
+    © <span id="y"></span> Ruslan A. • Public version of CV • Updates:
     <a class="chip" href="https://akbulatov.pro" target="_blank" rel="noopener" style="text-decoration:none">akbulatov.pro</a>
   </footer>
 </div>
