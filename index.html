@@ -10,6 +10,7 @@
     :root{
       --bg:#ffffff; --text:#111418; --muted:#6b7280;
       --accent:#FFD43B; --link:#0ea5e9;
+      --card:#fafafa; --rule:#ececec;
     }
     html{scroll-behavior:smooth}
     body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
@@ -24,7 +25,7 @@
     .role{margin:6px 0;font-weight:700;color:#374151}
     .note{font-size:14px;color:var(--muted);margin:8px 0 0}
 
-    /* CONTACTS — compact single row */
+    /* contacts */
     .contacts{display:flex;gap:18px;align-items:center;margin:10px 0 0;flex-wrap:wrap}
     .citem{display:inline-flex;align-items:center;gap:8px;color:#1f2937}
     .citem a{color:inherit;text-decoration:none}
@@ -36,19 +37,25 @@
     nav.topnav a:hover{color:#111827}
 
     /* sections */
-    section{margin:28px 0;padding:20px;border-radius:10px;background:#fafafa;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+    section{margin:28px 0;padding:20px;border-radius:10px;background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.08)}
     section h2{font-size:18px;margin:0 0 12px;letter-spacing:.12em;color:#111827;border-bottom:2px solid var(--accent);padding-bottom:6px}
     h3{margin:.6rem 0 .25rem;font-size:16px;color:#111}
-    .meta{color:var(--muted);font-weight:600;font-size:14px}
     .bullets{margin:.4rem 0 0;padding-left:1.2rem}
     .bullets li{margin:.25rem 0}
     .pill{display:inline-block;background:#0ea5e920;color:#0369a1;font-weight:600;font-size:13px;padding:3px 10px;border-radius:999px;margin:6px 0}
 
+    /* experience spacing */
+    #experience article{padding:6px 0 14px;margin:10px 0 14px;border-bottom:1px solid var(--rule)}
+    #experience article:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+
     /* lightbox */
     .lb-back{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:1000}
     .lb-inner{position:relative;max-width:92vw;max-height:88vh}
-    .lb-img{max-width:92vw;max-height:88vh;display:block;border-radius:10px}
+    .lb-img{max-width:92vw;max-height:88vh;display:block;border-radius:10px;cursor:pointer}
     .lb-close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
+
+    /* footer */
+    footer{margin-top:24px;color:var(--muted);font-size:14px;text-align:center}
 
     @media(max-width:600px){
       .name{font-size:24px}
@@ -69,8 +76,6 @@
       <div class="header-text">
         <h1 class="name">RUSLAN A.</h1>
         <p class="role">Senior Project Development Manager • Strategy & Investment Expert</p>
-
-        <!-- ultra short privacy note -->
         <p class="note">Public version: surname, phone, email & current employer are hidden for search-engine hygiene.</p>
 
         <!-- compact contacts -->
@@ -121,26 +126,30 @@
       <h2>PROFESSIONAL EXPERIENCE</h2>
 
       <article>
-        <span class="pill">Leading Integrated Oil & Gas Holding</span>
+        <span class="pill">RUSGAZDOBYCHA, JSC — Leading Integrated Oil & Gas Holding</span>
         <h3>Senior Project Development Manager | 2021 — Present</h3>
         <ul class="bullets">
-          <li>Secured preferential tax regimes and low-interest financing.</li>
-          <li>Established a Special Economic Zone (SEZ) with major tax & investment benefits.</li>
-          <li>Drafted proposals for senior officials, including the President & Prime Minister of Russia.</li>
-          <li>Coordinated cross-functional teams in upstream, refining, and petrochemicals.</li>
-          <li>Built strong working relations with ministries, regional authorities & top executives.</li>
+          <li>Established Special Economic Zone (SEZ) Ust-Luga with profit tax reduced to 7–15.5% until 2049 (vs 25% nationwide) and 0% property tax for 10 years (vs 2.2%).</li>
+          <li>Secured 20% import VAT exemption for gas-chemical complex equipment; project net financing ≈ $24 bn.</li>
+          <li>Secured multi-billion USD annual tax incentives for group companies, incl. LNG production benefits, reduced MET for oil & gas (incl. hard-to-recover reserves), targeted deductions and financing; portfolio covers implemented, pending, and deferred initiatives.</li>
+          <li>Secured access to a $1.2 bn state credit facility at 9.3% vs. market ~24%, delivering ≈ $174 m annual savings; clarified regulatory misinterpretation and, with the Ministry of Finance and the Ministry of Industry & Trade, proved compatibility with sovereign wealth financing.</li>
+          <li>Authored high-level reports, policy briefs and official correspondence for senior state leadership, including the President and Prime Minister of Russia.</li>
+          <li>Coordinated cross-functional teams across upstream, refining and petrochemicals, bringing together finance, legal, tax and technical experts to build financial models, legislative justifications and regulatory frameworks; led collaboration without direct reporting lines.</li>
+          <li>Built strong working relations with ministries, federal and regional authorities, and C-suite executives to secure approvals, advance legislative changes and deliver complex tax and financing benefits.</li>
         </ul>
       </article>
 
       <article>
-        <span class="pill">Ministry of Energy of the Russian Federation</span>
+        <span class="pill">Ministry of Energy of the Russian Federation — Department of Oil & Gas Complex</span>
         <h3>Senior Project Coordinator | 2016 — 2021</h3>
         <ul class="bullets">
-          <li>Led strategic initiatives on regulation and investment in the oil & gas sector.</li>
-          <li>Prepared reports & presentations for the President, Prime Minister, and Minister of Energy.</li>
-          <li>Developed legislative proposals; coordinated federal approvals.</li>
-          <li>Built financial models and assessed investment impacts.</li>
-          <li>Maintained trusted communications with government agencies & energy companies.</li>
+          <li>Developed tax and regulatory initiatives for the oil & gas sector, incl. amendments to the Tax Code, fuel dampers (gasoline, LPG/ethane, synthetic rubber), delivering multi-billion USD effects.</li>
+          <li>Drafted policy briefs, reports and official correspondence for the Government and Presidential Administration; supported Deputy Minister–level meetings with analytical and economic justifications.</li>
+          <li>Designed economic impact assessments for fiscal measures (e.g., dampers), calculating budget implications and company-level effects.</li>
+          <li>Supported incentive schemes for downstream investments, incl. propylene production and refinery upgrades.</li>
+          <li>Coordinated with enterprises of the oil & gas complex, federal agencies and regional authorities to align regulatory positions and secure legislative approvals.</li>
+          <li>Contributed to the Plan for Development of Petrochemicals until 2030: built and updated balances of feedstock (LPG, ethane, naphtha) and outputs (monomers, polymers, bitumen, etc.); monitored import substitution programs and catalyst development.</li>
+          <li>Prepared sector-wide shutdown schedules for refining/petrochemical units and provided market outlooks for petrochemical products.</li>
         </ul>
       </article>
     </section>
@@ -173,9 +182,8 @@
       <p><em>Finalist of “Leaders of Russia” — Russia’s premier nationwide management competition, confirming top leadership potential and providing access to an exclusive government-business executive network.</em></p>
     </section>
 
-    <footer style="margin-top:24px;color:#6b7280;font-size:14px">
-      © <span id="y"></span> Ruslan A. • Public version of CV • For updates visit
-      <a href="https://akbulatov.pro" target="_blank" rel="noopener" style="color:var(--link)">akbulatov.pro</a>
+    <footer>
+      © 2025 Ruslan A. • Public version of CV
     </footer>
   </div>
 
@@ -188,23 +196,18 @@
   </div>
 
   <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // lightbox open/close
+    const lb   = document.getElementById('lb');
+    const img  = document.getElementById('lbImg');
+    const btnX = document.getElementById('lbClose');
 
-    // open/close lightbox
-    const lb = document.getElementById('lb');
-    const lbImg = document.getElementById('lbImg');
-    const lbClose = document.getElementById('lbClose');
-
-    function openLb(){ lbImg.src='photo.jpg'; lb.style.display='flex'; }
+    function openLb(){ img.src='photo.jpg'; lb.style.display='flex'; }
     function closeLb(){ lb.style.display='none'; }
 
-    // click avatar to open
     document.querySelector('.avatar').addEventListener('click', openLb);
-
-    // close on X, on backdrop click, and on Esc
-    lbClose.addEventListener('click', closeLb);
-    lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); });
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); }); // click on backdrop
+    img.addEventListener('click', closeLb);                               // click on image
+    btnX.addEventListener('click', closeLb);                               // click on X
     document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && lb.style.display==='flex') closeLb(); });
   </script>
 </body>
