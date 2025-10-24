@@ -1,9 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "ru.akbulatov.pro" }],
-      "destination": "/ru/$1"
-    }
+    { "source": "https://ru.akbulatov.pro", "destination": "/ru" },
+    { "source": "https://ru.akbulatov.pro/(.*)", "destination": "/ru/$1" }
   ]
 }
