@@ -1,5 +1,9 @@
 {
-  "redirects": [
-    { "source": "https://ru.akbulatov.pro", "destination": "/ru", "permanent": false }
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "ru.akbulatov.pro" }],
+      "destination": "/ru/$1"
+    }
   ]
 }
