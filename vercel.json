@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "https://ru.akbulatov.pro", "destination": "/ru", "permanent": false }
+  ]
+}
