@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "https://ru.akbulatov.pro", "destination": "/ru" },
-    { "source": "https://ru.akbulatov.pro/(.*)", "destination": "/ru/$1" }
-  ]
-}
