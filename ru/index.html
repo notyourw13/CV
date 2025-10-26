@@ -3,10 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Руслан А. — Стратегия и инвестиции</title>
-  <meta name="description" content="Руслан А. — старший менеджер по развитию проектов. Стратегия, инвестиции и регулирование в нефтегазе и нефтехимии. Финалист «Лидеров России»." />
+
+  <title>Руслан А. — Старший менеджер по развитию проектов</title>
+  <meta name="description" content="Стратегия, инвестиции и взаимодействие с госорганами" />
   <meta name="color-scheme" content="light dark" />
-  <link rel="alternate" hreflang="en" href="https://akbulatov.pro" />
+
+  <!-- Open Graph / Telegram / Twitter (используем то же фото) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ru.akbulatov.pro/" />
+  <meta property="og:title" content="Руслан А. — Старший менеджер по развитию проектов" />
+  <meta property="og:description" content="Стратегия, инвестиции и взаимодействие с госорганами" />
+  <meta property="og:image" content="https://www.ru.akbulatov.pro/photo.jpg" />
+  <meta property="og:image:alt" content="Руслан А." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Руслан А. — Старший менеджер по развитию проектов" />
+  <meta name="twitter:description" content="Стратегия, инвестиции и взаимодействие с госорганами" />
+  <meta name="twitter:image" content="https://www.ru.akbulatov.pro/photo.jpg" />
+
+  <!-- Favicon (SVG data URL) + дубли для совместимости -->
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='black'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Inter%2C%20system-ui%2C%20-apple-system%2C%20Segoe%20UI%2C%20Roboto%2C%20Arial' font-size='42' fill='white' font-weight='700'%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='black'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Inter%2C%20system-ui%2C%20-apple-system%2C%20Segoe%20UI%2C%20Roboto%2C%20Arial' font-size='42' fill='white' font-weight='700'%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="mask-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='black'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Inter' font-size='42' fill='white' font-weight='700'%3EA%3C/text%3E%3C/svg%3E" color="#000000" />
+
   <style>
     :root{
       --bg:#ffffff; --text:#111418; --muted:#6b7280;
@@ -14,10 +33,11 @@
       --card:#fafafa; --rule:#ececec;
     }
     html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
     .wrap{max-width:1000px;margin:0 auto;padding:18px 14px 64px}
     @media(min-width:768px){ .wrap{padding:24px 20px 72px} }
 
+    /* header */
     .intro{display:flex;align-items:flex-start;gap:18px;margin-bottom:20px;flex-wrap:wrap}
     .avatar{width:110px;height:110px;border-radius:12px;object-fit:cover;border:3px solid var(--accent);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.25)}
     .header-text{flex:1;min-width:260px}
@@ -25,15 +45,18 @@
     .role{margin:6px 0;font-weight:700;color:#374151}
     .note{font-size:14px;color:var(--muted);margin:8px 0 0}
 
+    /* contacts */
     .contacts{display:flex;gap:18px;align-items:center;margin:10px 0 0;flex-wrap:wrap}
     .citem{display:inline-flex;align-items:center;gap:8px;color:#1f2937}
     .citem a{color:inherit;text-decoration:none}
     .cicon{width:18px;height:18px;opacity:.9;vertical-align:-2px}
 
+    /* top nav */
     nav.topnav{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0;justify-content:center}
     nav.topnav a{font-weight:700;text-decoration:none;color:#374151}
     nav.topnav a:hover{color:#111827}
 
+    /* sections */
     section{margin:28px 0;padding:20px;border-radius:10px;background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.08)}
     section h2{font-size:18px;margin:0 0 12px;letter-spacing:.12em;color:#111827;border-bottom:2px solid var(--accent);padding-bottom:6px}
     h3{margin:.6rem 0 .25rem;font-size:16px;color:#111}
@@ -41,10 +64,20 @@
     .bullets li{margin:.25rem 0}
     .pill{display:inline-block;background:#0ea5e920;color:#0369a1;font-weight:600;font-size:13px;padding:3px 10px;border-radius:999px;margin:6px 0}
 
+    /* experience spacing */
     #experience article{padding:6px 0 14px;margin:10px 0 14px;border-bottom:1px solid var(--rule)}
     #experience article:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
 
+    /* disclaimer */
     .disclaimer{font-size:13px;color:#6b7280;line-height:1.55;background:#f8f8f8;border:1px solid var(--rule);border-radius:8px;padding:12px 14px;margin-top:8px}
+
+    /* lightbox */
+    .lb-back{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:1000}
+    .lb-inner{position:relative;max-width:92vw;max-height:88vh}
+    .lb-img{max-width:92vw;max-height:88vh;display:block;border-radius:10px;cursor:pointer}
+    .lb-close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
+
+    /* footer */
     footer{margin-top:24px;color:var(--muted);font-size:14px;text-align:center}
 
     @media(max-width:600px){
@@ -62,16 +95,19 @@
 
     <!-- HEADER -->
     <div class="intro">
-      <img src="../photo.jpg" alt="Руслан А." class="avatar" onclick="openLb()"/>
+      <!-- То же фото, что и на англ. версии -->
+      <img src="photo.jpg" alt="Руслан А." class="avatar"/>
       <div class="header-text">
         <h1 class="name">РУСЛАН А.</h1>
-        <p class="role">Старший менеджер по развитию проектов • Стратегия и инвестиции (GR)</p>
-        <p class="note">Публичная версия: фамилия, телефон, e-mail и текущий работодатель скрыты из соображений поисковой гигиены.</p>
+        <p class="role">Старший менеджер по развитию проектов</p>
+        <p class="role">Стратегия, инвестиции и взаимодействие с госорганами</p>
+        <p class="note">Публичная версия: фамилия, телефон, e-mail и работодатель не публикуются в открытом доступе</p>
 
+        <!-- Контакты -->
         <div class="contacts" aria-label="Контакты">
           <span class="citem">
             <svg class="cicon" viewBox="0 0 24 24" fill="#60a5fa" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/></svg>
-            <a href="https://akbulatov.pro" target="_blank" rel="noopener">akbulatov.pro</a>
+            <a href="https://www.ru.akbulatov.pro" target="_blank" rel="noopener">www.ru.akbulatov.pro</a>
           </span>
           <span class="citem">
             <svg class="cicon" viewBox="0 0 24 24" fill="#22d3ee" xmlns="http://www.w3.org/2000/svg"><path d="M22 3L2 12l6.5 2 2.5 7 3.5-4 5 4 2.5-21z"/></svg>
@@ -101,17 +137,17 @@
     <!-- ABOUT -->
     <section id="about">
       <h2>ОБО МНЕ</h2>
-      <p>Менеджер проектов с опытом 9+ лет в нефтегазе и нефтехимии. Финалист «Лидеров России» — национального бенчмарка лидерского потенциала, подтверждающего сильные когнитивные и коммуникативные навыки и обеспечивающего доступ к сообществу лидеров. Работаю на стыке стратегии, инвестиций и регулирования: от подготовки федеральных мер и налоговых механизмов до реализации сложных межведомственных проектов с министерствами, институтами развития и топ-менеджментом компаний.</p>
+      <p>Менеджер проектов с опытом 9+ лет в нефтегазе. Финалист «Лидеров России» — национального бенчмарка лидерского потенциала, подтверждающего сильные когнитивные и коммуникативные навыки и обеспечивающего доступ к сообществу лидеров. Работаю на стыке стратегии, инвестиций и регулирования: от разработки нормативных мер и налоговых механизмов до реализации комплексных проектов с участием министерств, госбанков и руководителей компаний.</p>
     </section>
 
     <!-- IMPACT -->
     <section id="impact">
       <h2>РЕЗУЛЬТАТЫ И ЦИФРЫ</h2>
       <ul class="bullets">
-        <li>ОЭЗ «Усть-Луга»: налог на прибыль 7–15,5% до 2049 г. (против 25%); налог на имущество 0% на 10 лет (против 2,2%).</li>
-        <li>Освобождение от 20% таможенного НДС оборудования ГХК; общий объём финансирования проекта — ориентировочно ~$24 млрд (по открытым источникам).</li>
-        <li>Портфель мер господдержки на уровне группы: СПГ, НДПИ (в т.ч. трудноизвлекаемые), целевые вычеты и льготное финансирование (реализовано / в работе / отложено).</li>
-        <li>Доступ к кредиту ~100 млрд руб. под 9,3% при рыночных ~24% → экономия ~174 млн руб./год; снятие регуляторной неоднозначности и подтверждение совместимости с суверенным финансированием (совместно с профильными ведомствами).</li>
+        <li>Создание особой экономической зоны: налог на прибыль 7–15,5% до 2049 года (против 25%); налог на имущество 0% на 10 лет (против 2,2%).</li>
+        <li>Освобождение от 20% таможенного НДС оборудования газохимического комплекса; общий объём финансирования проекта ~ 2 трлн руб.</li>
+        <li>Портфель льгот по направлениям деятельности: производство СПГ, НДПИ (в т.ч. для ТРИЗ), вычеты и льготное финансирование (реализованные, в работе, отложенные).</li>
+        <li>Привлечение кредита на 100 млрд руб. под 9,3% (при рыночных ~24%) → экономия ~ 17–18 млрд руб. в год; подтверждена совместимость с программами Минфина РФ и Минпромторга РФ.</li>
       </ul>
     </section>
 
@@ -119,8 +155,8 @@
     <section id="languages">
       <h2>ЯЗЫКИ</h2>
       <ul class="bullets">
-        <li>Русский — родной, экспертный уровень делового и официального общения.</li>
-        <li>Английский — B2.</li>
+        <li>Английский — B2</li>
+        <li>Русский — родной; экспертный уровень деловой переписки и подготовки материалов для первых лиц.</li>
       </ul>
     </section>
 
@@ -129,27 +165,28 @@
       <h2>ОПЫТ РАБОТЫ</h2>
 
       <article>
-        <span class="pill">Крупный интегрированный нефтегазовый холдинг</span>
-        <h3>Старший менеджер по развитию проектов | 2021 — н.в.</h3>
+        <span class="pill">Группа компаний «РусГазДобыча»</span>
+        <h3>Главный специалист | 2021 — н.в. (4+ года)</h3>
         <ul class="bullets">
-          <li>ОЭЗ «Усть-Луга»: льготные режимы (прибыль/имущество); проектирование стимулов, согласования и взаимодействие с инвесторами.</li>
-          <li>20% освобождение от таможенного НДС для оборудования ГХК; подготовка правовых, финансовых и регуляторных обоснований.</li>
-          <li>Портфель льгот для активов группы (СПГ, НДПИ и др.); сопровождение заявочных материалов и расчётов.</li>
-          <li>Организация доступа к льготному кредитованию (~100 млрд руб. под 9,3%); совместная проработка условий с Минфином и Минпромторгом.</li>
-          <li>Аналитические записки, доклады и переписка для высших государственных органов (Президент, Председатель Правительства).</li>
-          <li>Координация финансовых, юридических, налоговых и технических подразделений без административного подчинения; модели, расчёты, регуляторные обоснования.</li>
-          <li>Системное взаимодействие с федеральными/региональными органами власти и C-suite для согласований и внедрения мер поддержки.</li>
+          <li>Создание особой экономической зоны (топоним в публичной версии не указываем): налог на прибыль 7–15,5% до 2049 года; налог на имущество 0% на 10 лет.</li>
+          <li>Освобождение от 20% таможенного НДС оборудования газохимического комплекса; общий объём финансирования проекта ~ 2 трлн руб.</li>
+          <li>Обеспечение получения компаниями группы льгот по направлениям деятельности: производство СПГ, НДПИ (в т.ч. для ТРИЗ), вычеты и льготное финансирование.</li>
+          <li>Привлечение кредита на 100 млрд руб. под 9,3% (при рыночных ~24%) — программы Минфина РФ и Минпромторга РФ.</li>
+          <li>Подготовка аналитики, писем, докладов для первых лиц, включая Председателя Правительства и Президента РФ.</li>
+          <li>Организация и согласование работы подразделений над комплексными проектами без административного подчинения.</li>
+          <li>Выстраивание надёжных связей с представителями органов власти и компаний отрасли.</li>
         </ul>
       </article>
 
       <article>
         <span class="pill">Министерство энергетики РФ — Департамент нефтегазового комплекса</span>
-        <h3>Главный специалист | 2016 — 2021</h3>
+        <h3>Главный специалист | 2016 — 2021 (5 лет)</h3>
         <ul class="bullets">
-          <li>Проработка инициатив по фискальным мерам и отраслевым стимулам: сбор данных, обсуждения с компаниями и ведомствами, учёт поручений руководства.</li>
-          <li>Экономическое моделирование влияния мер на бюджет и компании; аналитика и доклады для уровня Президента/Премьера.</li>
-          <li>Согласование предложений с ФОИВ, РОИВ и отраслевыми компаниями.</li>
-          <li>Разработка поправок в Налоговый кодекс и топливных демпферов (бензин, СУГ, каучук) с существенным макроэффектом.</li>
+          <li>Проработка инициатив по новым фискальным мерам и мерам стимулирования отрасли в upstream и downstream: трудноизвлекаемые запасы и морские месторождения, модернизация НПЗ, демпфер (стабилизатор) рынка топлив.</li>
+          <li>Экономическое моделирование влияния предложенных мер на бюджет и компании.</li>
+          <li>Подготовка писем, докладов, аналитических материалов, в т.ч. для Министра энергетики, Правительства и Президента РФ; организация совещаний уровня замминистра.</li>
+          <li>Согласование предложений с федеральными и региональными органами власти и нефтегазовыми компаниями.</li>
+          <li>Разработка и согласование проектов федеральных нормативных правовых актов для целей нефтегазовой отрасли.</li>
         </ul>
       </article>
     </section>
@@ -158,11 +195,11 @@
     <section id="strengths">
       <h2>НАВЫКИ И СИЛЬНЫЕ СТОРОНЫ</h2>
       <ul class="bullets">
-        <li>Стратегическое и критическое мышление под давлением.</li>
-        <li>Быстрая адаптация и решение проблем — от разработки законопроектов до практических инструментов (например, этот сайт-резюме).</li>
-        <li>Эффективная коммуникация с министерствами и топ-менеджментом.</li>
-        <li>Правовая, финансовая и регуляторная экспертиза.</li>
-        <li>Координация работы подразделений без формального подчинения.</li>
+        <li>Стратегическое и критическое мышление.</li>
+        <li>Быстрая адаптация и решение проблем — от разработки ФЗ до практических инструментов (например, сайт-резюме).</li>
+        <li>Коммуникация на высоком уровне; взаимодействие с министерствами и C-suite.</li>
+        <li>Правовые, финансовые и регуляторные компетенции.</li>
+        <li>Кросс-функциональная координация без прямого админподчинения.</li>
       </ul>
     </section>
 
@@ -170,10 +207,9 @@
     <section id="education">
       <h2>ОБРАЗОВАНИЕ И КУРСЫ</h2>
       <ul class="bullets">
-        <li>Магистр права в сфере природоресурсных отношений — МГЮА им. О. Е. Кутафина | 2016 – 2018.</li>
-        <li>Бакалавр, химическая технология нефти и газа — РГУ нефти и газа им. И. М. Губкина | 2012 – 2016.</li>
-        <li>Курс: «Криптовалюты. Введение и практика использования» | 2023 – 2024.</li>
-        <li>Курс: «Функционирование рынка криптовалют» | 2024.</li>
+        <li>МГЮА им. Кутафина — магистр права | 2016–2018.</li>
+        <li>РГУ нефти и газа (НИУ) им. Губкина — бакалавр, химическая технология переработки нефти и газа | 2012–2016.</li>
+        <li>Курсы: введение в криптовалюты, практика их использования; функционирование рынка криптовалют | 2023–2024.</li>
       </ul>
     </section>
 
@@ -181,22 +217,22 @@
     <section id="more">
       <h2>ДОПОЛНИТЕЛЬНО</h2>
       <ul class="bullets">
-        <li>Рекомендации от Минэнерго РФ и бывшего корпоративного работодателя — по запросу.</li>
-        <li>Soft skills: выстраивание доверительных отношений с госорганами и C-suite; убеждающая коммуникация и согласование интересов стейкхолдеров.</li>
-        <li>Tech & tools: быстро осваиваю новые инструменты — от сборки этого сайта до простых автоматизаций; умею формулировать технические задания и эффективно использовать AI.</li>
+        <li>Рекомендации из Минэнерго РФ и от последнего работодателя — по запросу.</li>
+        <li>Выстраиваю доверительные отношения с госорганами и топ-менеджментом; умею согласовывать интересы сторон и переводить переговоры в результат.</li>
+        <li>Технологичность: быстро осваиваю инструменты — от запуска этого CV-сайта до SMM/таргета и простых ботов; формализую задачи для специалистов и эффективно использую AI.</li>
       </ul>
     </section>
 
     <!-- INTERESTS -->
     <section id="interests">
       <h2>ИНТЕРЕСЫ</h2>
-      <p>Теннис и падел — площадки для профессионального нетворкинга с руководителями и инвесторами.</p>
+      <p>Теннис и падел — рабочая площадка для нетворкинга и взаимодействия с руководителями и инвесторами.</p>
     </section>
 
     <!-- DISCLAIMER -->
     <section id="disclaimer">
       <h2>ДИСКЛЕЙМЕР</h2>
-      <p class="disclaimer">Все цифры и детали проектов основаны на публично доступной информации и приведены в иллюстративных целях. Они не раскрывают конфиденциальные данные и могут отличаться от внутренних показателей компаний.</p>
+      <p class="disclaimer">Все цифры и детали проектов основаны на общедоступной информации и носят иллюстративный характер. Конфиденциальные данные не раскрываются и могут отличаться от внутренних материалов.</p>
     </section>
 
     <footer>
@@ -205,24 +241,38 @@
   </div>
 
   <!-- LIGHTBOX -->
-  <div class="lb-back" id="lb">
+  <div class="lb-back" id="lb" aria-hidden="true">
     <div class="lb-inner">
       <img class="lb-img" id="lbImg" alt="Руслан А." />
-      <button class="lb-close" id="lbClose">✕</button>
+      <button class="lb-close" id="lbClose" aria-label="Закрыть">✕</button>
     </div>
   </div>
 
   <script>
-    const lb=document.getElementById('lb');
-    const img=document.getElementById('lbImg');
-    const btnX=document.getElementById('lbClose');
-    function openLb(){ img.src='../photo.jpg'; lb.style.display='flex'; }
-    function closeLb(){ lb.style.display='none'; }
-    document.querySelector('.avatar').addEventListener('click', openLb);
-    lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); });
-    img.addEventListener('click', closeLb);
-    btnX.addEventListener('click', closeLb);
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && lb.style.display==='flex') closeLb(); });
+    // Ждём готовности DOM, чтобы обработчики гарантированно навесились
+    document.addEventListener('DOMContentLoaded', () => {
+      const lb   = document.getElementById('lb');
+      const img  = document.getElementById('lbImg');
+      const btnX = document.getElementById('lbClose');
+      const avatar = document.querySelector('.avatar');
+
+      function openLb() {
+        img.src = 'photo.jpg';
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden', 'false');
+      }
+      function closeLb() {
+        lb.style.display = 'none';
+        lb.setAttribute('aria-hidden', 'true');
+        img.removeAttribute('src');
+      }
+
+      if (avatar) avatar.addEventListener('click', openLb);
+      if (btnX)   btnX.addEventListener('click', closeLb);
+      if (lb)     lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+      if (img)    img.addEventListener('click', closeLb);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.style.display === 'flex') closeLb(); });
+    });
   </script>
 </body>
 </html>
